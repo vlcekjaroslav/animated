@@ -422,9 +422,11 @@
     var mouseX = 0;
 
     $(document).ready(function(){
-    if(window.matchMedia("(max-width: 812px)").matches){
+    if($(window).width() < 812){
         alert("This is a mobile device.");
-        $('.box__ghost-eyes').css({'transform': 'translate(' + 50 + '%,-' + 50 + '%)'});
+        mouseX = 50;
+        mouseY = 50;
+        $('.box__ghost-eyes').css({'transform': 'translate(' + mouseX + '%,-' + mouseY + '%)'});
     } else{
          $(document).mousemove(function (event) {
 
